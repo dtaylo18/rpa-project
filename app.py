@@ -1,5 +1,7 @@
 
-
+pd.options.display.float_format = '{:,.2f}'.format # Display option to include 2 decimal places on all floats
+pd.set_option('display.max_columns', None) # Display option to show all columns
+pd.set_option('display.max_rows', None) # Display option to show all rows
 
 while True:
     directory = single_input("Please input the directory where the file is located.", width=400, height=200)
@@ -15,7 +17,6 @@ while True:
         show_message('Error: Your directory is missing files.','Please re-enter the directory.')# Insert your python code here
 
 ddf = pd.read_excel(directory+'ProductData.xlsx',sheet_name='Descriptions')
-display(ddf.head())
 
 product_descriptions = {}
 for index, row in ddf.iterrows():
@@ -23,7 +24,6 @@ for index, row in ddf.iterrows():
 product_descriptions
 
 pdf = pd.read_excel(directory+'ProductData.xlsx',sheet_name='Prices')
-display(pdf.head())
 
 product_prices = {}
 for index, row in pdf.iterrows():
