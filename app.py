@@ -79,7 +79,9 @@ def send_email(invoice_num, name, email, date, directory):
     # Enter your gmail user name and password
 
     gmail_user = "22dtaylor2@gmail.com"
-    gmail_password = open('gmail_password.txt').read()
+    gmail_password_path = select_file('Please select the gmail password file')
+
+    gmail_password = open(gmail_password_path).read()
 
     # List of recipients
 
